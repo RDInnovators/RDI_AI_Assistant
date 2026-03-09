@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDI AI Prompt Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>RDI AI Prompt Assistant</h1>
+      <p>Turn raw research ideas into AI-ready prompt packs and smart next-step recommendations.</p>
+    </header>
+
+    <section class="card">
+      <form id="researchForm">
+        <div class="grid">
+          <div class="field full">
+            <label for="working_title">Working title / idea *</label>
+            <textarea id="working_title" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="research_field">Research field/domain *</label>
+            <input id="research_field" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="target_output">Target output *</label>
+            <select id="target_output" required>
+              <option value="">Select</option>
+              <option>Conference paper</option>
+              <option>Journal paper</option>
+              <option>Thesis</option>
+              <option>Review paper</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="main_problem">Main problem *</label>
+            <textarea id="main_problem" required></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="importance">Why is this problem important? *</label>
+            <textarea id="importance" required></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="proposed_solution">Proposed solution / method / concept *</label>
+            <textarea id="proposed_solution" required></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="novelty">What is new in your idea? *</label>
+            <textarea id="novelty" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="paper_type">Paper type *</label>
+            <select id="paper_type" required>
+              <option value="">Select</option>
+              <option>Experimental</option>
+              <option>System design</option>
+              <option>Framework</option>
+              <option>Review</option>
+              <option>Survey</option>
+              <option>Theoretical</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="preferred_angle">Preferred angle *</label>
+            <input id="preferred_angle" type="text" placeholder="Technical / Sustainability / Security / Healthcare" required />
+          </div>
+
+          <div class="field full">
+            <label for="known_keywords">Known keywords *</label>
+            <textarea id="known_keywords" required></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="similar_papers">Similar papers / methods known</label>
+            <textarea id="similar_papers"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="data_available">Data source available?</label>
+            <select id="data_available">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="deadline">Deadline / submission month</label>
+            <input id="deadline" type="text" placeholder="e.g. July 2026" />
+          </div>
+
+          <div class="field full">
+            <label for="data_source_details">Data source details</label>
+            <textarea id="data_source_details"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="tools_available">Tools/platforms available</label>
+            <textarea id="tools_available" placeholder="ChatGPT, Bohrium, Perplexity, Gemini, Python, MATLAB"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="constraints">Constraints *</label>
+            <textarea id="constraints" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="target_venue">Target journal/conference</label>
+            <input id="target_venue" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="ai_help_needed_first">What AI help is needed first? *</label>
+            <input id="ai_help_needed_first" type="text" placeholder="Literature search / Writing / Gap finding / Methodology" required />
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Generate Prompt Pack</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="resultSection">
+      <h2>Result</h2>
+      <div id="resultContent"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
